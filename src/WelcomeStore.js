@@ -10,7 +10,8 @@ class WelcomeStore {
 
     getWelcomeTimeout(roomId) {
         var item = JSON.parse(this._store.getItem(roomId) || "{}");
-        if (!item['timeout']) return 3;
+        if (!item['timeout']) item['timeout'] = 3;
+        LogService.verbose("WelcomeStore", "Timeout for " + roomId + " is " + item['timeout']);
         return item['timeout'];
     }
 

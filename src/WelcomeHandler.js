@@ -30,11 +30,11 @@ class WelcomeHandler {
         }
 
         var lastActiveMs = userTree[event.getSender()];
-        if (lastActiveMs && (moment.valueOf() - lastActiveMs) > (WelcomeStore.getWelcomeTimeout(event.getRoomId()) * 60000)) {
+        if (lastActiveMs && (moment().valueOf() - lastActiveMs) > (WelcomeStore.getWelcomeTimeout(event.getRoomId()) * 60000)) {
             LogService.info("WelcomeHandler", "Welcoming " + event.getSender() + " back in room " + event.getRoomId());
             this._client.sendNotice(event.getRoomId(), "Welcome back, " + event.getSender());
         } else LogService.info("WelcomeHandler", "User " + event.getSender() + " was active recently in " + event.getRoomId());
-        userTree[event.getSender()] = moment.valueOf();
+        userTree[event.getSender()] = moment().valueOf();
     }
 }
 
