@@ -4,7 +4,8 @@ const moment = require("moment");
 
 class WelcomeHandler {
     constructor() {
-        this._recentUsers = {}; // { roomId: { userId: lastActive } }
+        // { roomId: { userId: lastActive } }
+        this._recentUsers = WelcomeStore.loadLastActiveMap();
     }
 
     start(client) {
@@ -26,6 +27,7 @@ class WelcomeHandler {
         if (!userTree) {
             this._recentUsers[event.getRoomId()] = {};
             this._recentUsers[event.getRoomId()][event.getSender()] = moment().valueOf();
+            WelcomeStore.storeLastActiveMap(this._recentUsers);
             return;
         }
 
@@ -35,6 +37,7 @@ class WelcomeHandler {
             this._client.sendNotice(event.getRoomId(), "Welcome back, " + event.getSender());
         } else LogService.info("WelcomeHandler", "User " + event.getSender() + " was active recently in " + event.getRoomId());
         userTree[event.getSender()] = moment().valueOf();
+        WelcomeStore.storeLastActiveMap(this._recentUsers);
     }
 }
 

@@ -20,6 +20,14 @@ class WelcomeStore {
         item['timeout'] = timeoutMinutes;
         this._store.setItem(roomId, JSON.stringify(item));
     }
+
+    storeLastActiveMap(map) {
+        this._store.setItem("last_active", JSON.stringify(map));
+    }
+
+    loadLastActiveMap() {
+        return JSON.parse(this._store.getItem("last_active") || "{}");
+    }
 }
 
 module.exports = new WelcomeStore();
