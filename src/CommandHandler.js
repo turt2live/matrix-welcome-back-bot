@@ -42,7 +42,7 @@ class CommandHandler {
         var timeoutMinutes = WelcomeStore.getWelcomeTimeout(event.getRoomId());
         var message = "Welcome bot help:<br>" +
             "<code>!wb help</code> - This menu<br>" +
-            "<code>!wb &lt;timeoutMinutes&gt;</code> - Sets the welcome timeout in minutes (currently " + timeoutMinutes + " mintues)<br>";
+            "<code>!wb &lt;timeoutMinutes&gt;</code> - Sets the welcome timeout in minutes (currently " + timeoutMinutes + " minutes)<br>";
         var plainMessage = htmlToText.fromString(message);
         this._client.sendHtmlNotice(event.getRoomId(), plainMessage, message);
     }
