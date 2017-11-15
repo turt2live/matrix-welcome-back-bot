@@ -9,7 +9,7 @@ class CommandHandler {
             if (event.getType() !== 'm.room.message') return;
             if (event.getSender() === client.credentials.userId) return;
             if (event.getContent().msgtype !== 'm.text') return;
-            if (!event.getContent().body.startsWith("!wb")) return;
+            if (!event.getContent().body.startsWith("!wb ")) return;
 
             this._processCommand(event);
         });
