@@ -1,8 +1,6 @@
 # matrix-welcome-back-bot
 
-[![TravisCI badge](https://travis-ci.org/turt2live/matrix-topic-bot.svg?branch=master)](https://travis-ci.org/turt2live/matrix-welcome-back-bot)
-[![Targeted for next release](https://badge.waffle.io/turt2live/matrix-welcome-back-bot.png?label=sorted&title=Targeted+for+next+release)](https://waffle.io/turt2live/waffle-matrix?utm_source=badge)
-[![WIP](https://badge.waffle.io/turt2live/matrix-welcome-back-bot.png?label=wip&title=WIP)](https://waffle.io/turt2live/waffle-matrix?utm_source=badge)
+[![TravisCI badge](https://travis-ci.org/turt2live/matrix-welcome-back-bot.svg?branch=master)](https://travis-ci.org/turt2live/matrix-welcome-back-bot)
 
 A silly bot that welcomes users back after they've been inactive for a little while. Talk about it in [#welcomeback:t2bot.io](https://matrix.to/#/#welcomeback:t2bot.io).
 
