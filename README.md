@@ -12,8 +12,11 @@ A silly bot that welcomes users back after they've been inactive for a little wh
 
 # Building your own
 
+Note: The bot is intended to run in a Docker environment. Use `turt2live/matrix-welcome-back-bot` or build your own with `docker build -t welcome-back-bot .`.
+
 1. Clone this repository
 2. `npm install`
 3. Copy `config/default.yaml` to `config/production.yaml`
 4. Edit the values of `config/production.yaml` to match your needs
-5. Run the bot with `NODE_ENV=production node index.js`
+5. `npm run build`
+6. Run the bot with `NODE_ENV=production node lib/index.js`
