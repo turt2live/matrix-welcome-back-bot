@@ -25,7 +25,7 @@ client.setJoinStrategy(new SimpleRetryJoinStrategy());
 const activeMap = WelcomeStore.getLastActiveMap();
 
 client.on("room.upgraded", async (roomId, event) => {
-    const oldRoomId = event['content']['predecessor'];
+    const oldRoomId = event['content']['predecessor']['room_id'];
     LogService.info("index", `Migrating data from ${oldRoomId} to ${roomId}`);
 
     const timeout = WelcomeStore.getWelcomeTimeout(oldRoomId);
